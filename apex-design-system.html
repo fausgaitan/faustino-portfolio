@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Faustino Gaitan – UX/UI Product Designer</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <meta name="viewport" content="width=device-width">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="case-study-h1"><mark>Apex Design System</mark></h1>
+        <h2 class="case-study-h2">Case Study</h2>
+        <div class="case-study-sep"></div>
+        
+        <div class="case-study-content">
+            <strong>Apex</strong> is the design system for the engineering and product teams at ThirdLove.<p></p>
+            <p>In the following case study, I’ll present the steps that we’ve followed to come up with the basis of it, the people involved, the challenges, tools used, and what we expect to achieve in the future.</p>
+            <p><img src="images/apex-mac.jpg" class="img-full-width"></p>
+            <h3 class="case-study-h3">Intro</h3>
+            <p>ThirdLove is an American company that produces and sells bras, underwear, and loungewear. The teams have grown significantly over the past few months, and the number of engineers working on features on the different parts of the website has made us reflect on how we should approach the design &amp; development process.</p>
+            <p>We knew we had a problem because every time a new person joins the team, they would design and/or build components their way.</p>
+            <p>We went through a big rebrand at some point, and that’s another “wake-up call” that made us realize the huge inconsistency and how complicated was updating everything across our platform. We had a basic style guide, but it wasn’t enough, the defined elements were not 100% representative of what we had in our repositories and what was live in production. So after some discussion, we knew that having a design system was the answer to our problem.</p>
+            <h3 class="case-study-h3">My Role</h3>
+            <p>By the time we decided to start working on it, we were 3 UX designers in the team, and the rest a mix of Full-stack engineers, QA engineers, and Product Managers.</p>
+            <p>I would consider myself a full-stack UX / Product Designer because I know how to build components with HTML/ CSS and some vanilla Javascript, so I was the one with the initiative to work at least 50% on our design system and 50% on UX related projects.</p>
+            <h3 class="case-study-h3">Where to start?</h3>
+            <p>We asked ourselves whether we should focus on typography, colors, spacing, or maybe buttons. But the reality was that we were not entirely sure where, to begin with.</p>
+            <p>Something was 100% certain, we knew why we wanted a Design system:</p>
+            <ul>
+            <li>We knew we had to do something to reduce our technical and design debt.</li>
+            <li>Many engineers come from companies that already had a design system, so we had evidence that the development speed would improve significantly.</li>
+            <li>We wanted to improve consistency by updating our existing style guide.</li>
+            </ul>
+            <p><img src="images/style-guide-zeplin-1.jpg" class="img-full-width"></p>
+            <h3 class="case-study-h3">Step 1: The Research &amp; Audit</h3>
+            <p>Before going in and start working on anything. I decided to read, read and read more. I joined an amazing slack group called <a href="http://design-systems.slack.com/" target="_blank" rel="noopener noreferrer">Design Systems</a>, to find out about good practices, and I also read a couple of amazing books: “<i>Design Systems</i>” by Alla Kholmatova, and “<i>Atomic Design</i>” by Brad Frost.</p>
+            <p>In order to find out what was the level of irregularity in our UI, I decided to take action. I opened a google sheet file and started to take screenshots of all our buttons. I thought starting with this basic component would be fun as well.</p>
+            <p>At first, I also wanted to uncover CSS &amp; HTML issues so I created different columns, one for the screenshot, another for the section where the button was located, URL, whether it was in line or not with our official UI style guide stored on <strong>Zeplin</strong>, and finally the HTML used to create the button.</p>
+            <p>I was able to discover to my surprise that some developers were defining buttons using the wrong HTML elements like SPAN, DIV, and some would use INPUT or BUTTON. What’s interesting about this is the fact that some browsers render those elements very differently!</p>
+            <p>The same thing happened with colors when it came to the naming convention. The root cause was the fact that we only had the “brand” colors defined in our style guide. No shades or tints were ever defined. There were even duplicated variables, for instance, some devs were defining a grey shade as <strong>$lighter-grey-2</strong> or <strong>$grey2</strong>, and they both would have the same value! A complete mess!</p>
+            <p><img src="images/inconsistency.jpg" class="img-full-width"></p>
+            <ul style="margin: 20px 0">
+            <li>There were colors that were not in use anymore</li>
+            <li>No naming convention defined</li>
+            <li>Big discrepancy between the official style guide and the colors sass file</li>
+            </ul>
+            <p>Conducting an audit allowed me to visualize the level of inconsistency, the number of instances where the colors were used, and also allowed me to merge and remove colors we didn’t need.</p>
+            <div align="center"><img src="images/Screen-Shot-2019-10-21-at-7.47.15-PM.png" style="width: 70%; text-align: center"></div>
+            <p>I came up with a new naming convention using the <strong>greek alphabet</strong>. The idea was to depart from variable names that used the actual colors, so if in the future there’s a rebrand, replacing the variable values would simplify the process significantly.</p>
+            <p>I’ve followed the same process with typography, iconography, spacing, breakpoints, and micro-interactions.</p>
+            <h3 class="case-study-h3">Step 2: The Sketch Libraries</h3>
+            <p>By the time I’ve started auditing, there was no official sketch UI kit with symbols in place. Each designer would have his/her files to try to speed up the process, but there was no common source of truth.</p>
+            <p>We thought using Sketch Libraries was the perfect remedy for potential design collaboration issues when working as part of a team. You can sync, share and update Symbols across all of your documents, allowing your designs to stay consistent and up-to-date when working on a project of any size.</p>
+            <p>You can potentially share a Library by either storing it on a Local Server, by using a Cloud Service such as Dropbox, or even via a Version Control system like GitHub or Abstract. As a result, you and your teammates can have access to the same Libraries from one central location.</p>
+            <p>In our case, we decided to use google drive to store and sync the files.</p>
+            <h3 class="case-study-h3">Step 3: The Name &amp; Documentation</h3>
+            <p>We didn’t know what tool to use. We knew there were several options. I created a slack channel and I asked engineers and other product designers to recommend options. We explored Frontify, we considered using WordPress, and I even played around a bit with static site generators like Gatsbyjs based on React. It was fun!</p>
+            <p>We needed something easy to manage because the documentation site would be updated also in the future by other team members like copywriters to include voice &amp; tone, or visual designers to add illustrations or other assets.</p>
+            <p>After trying different options, I found a great tool called <a href="https://zeroheight.com/" target="_blank" rel="noopener noreferrer">zeroheight</a>. It has everything we need:</p>
+            <ul>
+            <li>Versioning &amp; password protection</li>
+            <li>Edit pages similar to google docs, super simple!</li>
+            <li>Sync sketch libraries with the documentation site</li>
+            <li>Connect documentation with storybook &amp; github</li>
+            <li>Publish code snippets where necessary</li>
+            </ul>
+            <p>I connected with our Chief Design Officer to define a name for our design system. So I suggested different names from <strong>“Audrey”</strong> (in honor to Audrey Hepburn) to <strong>“Frida”</strong> (in honor to Frida Khalo), but the name that resonated the most was <strong>APEX</strong>. Why Apex? For those who don’t know, this is the definition: “it’s the section of the bra that connects the cup with the strap”. It made total sense as a design system does that <strong>it connects and aligns teams in an org</strong>.</p>
+            <p><img src="./APEX_files/sketch-zeroheight-storybook-1.jpg" class="img-full-width"></p>
+            <h3 class="case-study-h3">Step 4: Cross Functional Collaboration</h3>
+            <p>Working on a design system can be a challenge at first. Especially when you need to get the initial buy-in from leadership. Fortunately, ThirdLove is a design-driven company, so it didn’t take too much to get the initial approval.</p>
+            <p>It can be a tedious task at first, especially when auditing all the UI and making sure we had all defined in Sketch and also documented in Zero Height was a big undertaking. It’s a gradual task.</p>
+            <p>In order to keep the whole team informed, I set up a weekly catch-ups with the product &amp; the engineering team to inform the new design pattern definitions, sometimes they would request existing components to be defined, sometimes they suggest new items. We aim to have all in sync, from sketch libraries to React components in Storybook.</p>
+            <p>Another thing we found super useful, was the design system slack channel we created. Our team is very passionate about improving our processes and they constantly post articles from Medium or other websites.</p>
+            <h3 class="case-study-h3">Next steps…</h3>
+            <p>Maintaining a design system is not a project that starts and finishes. A design system is a living product that requires constant updates, it evolves with time.</p>
+            <p>As the team grows, and new people join us, we are likely to:</p>
+            <p>– Test new tools to make sure we version all sketch libraries our UI components.<br>
+            – Research ways to define a formal approval process when new design patterns are suggested.<br>
+            – Consider the possibility to have the QA Team to jump in and test new items every time we need to push them to GitHub.<br>
+            – Evangelize the design system more across the teams using Slack, setting up Design systems catch-up meetings, etc…</p>
+            <div style="border: 1px solid grey; padding: 20px;">If you want to know more about me and this project, feel free to send me a DM on <a href="https://www.linkedin.com/in/faustinogaitan/" target="_blank" rel="noopener noreferrer">LinkedIn</a> or an email to <a href="mailto:faustinogaitan@gmail.com">faustinogaitan@gmail.com</a></div>
+            </div>
+        
+        
+    </div>
+
+</body>
+
+</html>
