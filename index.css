@@ -10,6 +10,10 @@ body {
     font-style: normal;
     box-sizing: border-box;
     font-size: 14px;
+    display: table;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .container {
@@ -70,7 +74,7 @@ mark.front-highlight {
     border-radius: 7px;
     padding: 35px;
     transition: all 0.3s ease-in-out;
-    display:block;
+    display: block;
     text-decoration: none;
 }
 
@@ -165,7 +169,7 @@ mark.front-highlight {
 
 .front-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .front-links ul {
@@ -226,9 +230,7 @@ mark.front-highlight {
     position: absolute;
     height: 20px;
     top: 168px;
-    background: linear-gradient(
-184.36deg
-, #A44474 3.58%, #BC83B7 100%);
+    background: linear-gradient(184.36deg, #A44474 3.58%, #BC83B7 100%);
 }
 
 .case-study-h2 {
@@ -261,13 +263,24 @@ mark.front-highlight {
 @media (max-width: 425px) {
 
     .container {
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
     .front-links {
         flex-direction: column;
     }
+
+    .front-links h2,
+    .front-links ul {
+        text-align: center;
+    }
+
+    .front-certifications {
+        justify-content: center;
+    }
+
+    .front-page-intro{
+        width: 87%;
+    }
 }
-
-
