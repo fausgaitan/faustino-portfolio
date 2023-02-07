@@ -47,7 +47,7 @@ body {
     font-size: 20px;
     line-height: 146%;
     font-weight: 300;
-    width: 598px;
+    width: 700px;
     margin: 0 auto;
     color: black;
 }
@@ -229,7 +229,7 @@ mark.front-highlight {
     margin-right: -50vw;
     position: absolute;
     height: 20px;
-    top: 168px;
+    top: 220px;
     background: linear-gradient(184.36deg, #A44474 3.58%, #BC83B7 100%);
 }
 
