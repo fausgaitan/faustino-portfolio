@@ -259,6 +259,22 @@ mark.front-highlight {
     width: 100vw;
 }
 
+.breadcrumbs{
+    margin-bottom: 30px;
+    position: absolute;
+    top: 50px;
+}
+
+.breadcrumbs a {
+    font-size: 16px;
+    color:black;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color:#a34070
+}
+
 
 @media (max-width: 425px) {
 
