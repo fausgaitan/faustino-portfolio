@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
-  branch: main  # Change this if your branch is different
+  branch: master  # Change to "main" if your repo uses "main"
 
-media_folder: "static/uploads"  # Where uploaded images are stored
+media_folder: "static/uploads" # Folder for uploaded media
 public_folder: "/uploads"
 
 collections:
@@ -15,12 +15,3 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Published", name: "published", widget: "boolean" }
-
-# Authentication
-publish_mode: editorial_workflow  # Enables draft and review states
-site_url: "https://faustinog.netlify.app"  # Change to your Netlify URL
-display_url: "https://faustinog.netlify.app"
-logo_url: "https://your-site.com/logo.png"  # Optional branding
-
-# Backend Authentication (Netlify Auth0)
-local_backend: false
