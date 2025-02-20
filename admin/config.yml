@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
 
-media_library:
-  name: uploadcare
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
@@ -12,15 +12,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "pages"
-    label: "Portfolio Pages"
-    files:
-      - label: "Homepage"
-        name: "homepage"
-        file: "index.html"
-        fields:
-          - { label: "HTML Content", name: "body", widget: "code", default_language: "html" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "body", label: "Body", widget: "markdown" }
