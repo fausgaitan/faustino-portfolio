@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,600&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     text-transform: inherit;
@@ -10,10 +14,10 @@ body {
     font-style: normal;
     box-sizing: border-box;
     font-size: 14px;
-    display: table;
-    margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    margin-left: 0px;
+    padding-top: 0px; /* Ensures navbar does not overlap content */
 }
 
 .container {
@@ -274,6 +278,72 @@ mark.front-highlight {
 .breadcrumbs a:hover {
     color:#a34070
 }
+
+
+/* Full-width navbar but content inside aligns with .container */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center contents */
+    align-items: center;
+    padding: 10px 0;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 30px;
+}
+
+/* Container inside navbar to control alignment */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Restrict width */
+    padding: 0 20px; /* Prevent touching screen edges */
+}
+
+/* Align the logo to the left */
+.nav-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Align the menu items to the right */
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px; /* Adds spacing between links */
+}
+
+/* Style the text links */
+.nav-right a, .nav-left a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Center the main content */
+.container {
+    max-width: 1024px; /* Restrict content area */
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+
+.gradient-text {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #6de3d2, #a685e2, #f25eff); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
 
 
 @media (max-width: 425px) {
