@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Content Manager</title>
-  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app/dist/netlify-cms-app.js"></script>
 </head>
 <body>
   <script>
     console.log("Netlify CMS script loading...");
-
     document.addEventListener("DOMContentLoaded", () => {
       console.log("Window loaded.");
-      console.log("Checking CMS object:", window.CMS);
+      
+      setTimeout(() => {
+        console.log("Checking CMS object:", window.CMS);
 
-      if (typeof window.CMS !== "undefined") {
-        console.log("CMS found, initializing...");
-        window.CMS.init();
-      } else {
-        console.error("Netlify CMS script did not load properly.");
-      }
+        if (typeof window.CMS !== "undefined") {
+          console.log("CMS found, initializing...");
+          window.CMS.init();
+        } else {
+          console.error("Netlify CMS script did not load properly.");
+        }
+      }, 2000); // Delay check by 2 seconds to allow script loading
     });
   </script>
 </body>
