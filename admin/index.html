@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Content Manager</title>
-  <script type="module">
-    import CMS from "./netlify-cms.js";
-    window.CMS = CMS;
-  </script>
+  <script src="./netlify-cms.js"></script>
 </head>
 <body>
   <script>
@@ -14,8 +11,8 @@
     window.onload = function () {
       console.log("Window fully loaded.");
       console.log("Checking CMS object:", window.CMS);
-      if (typeof CMS !== "undefined") {
-        CMS.init();
+      if (typeof window.CMS !== "undefined") {
+        window.CMS.init();
       } else {
         console.error("Netlify CMS script did not load properly.");
       }
