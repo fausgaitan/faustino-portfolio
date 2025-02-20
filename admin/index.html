@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Content Manager</title>
+
+  <!-- Load React Dependencies -->
   <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+  <!-- Load Netlify CMS -->
   <script src="./netlify-cms.js"></script>
 </head>
 <body>
@@ -13,7 +17,9 @@
     window.onload = function () {
       console.log("Window fully loaded.");
       console.log("Checking CMS object:", window.CMS);
+      
       if (typeof window.CMS !== "undefined") {
+        console.log("CMS Loaded Successfully!");
         window.CMS.init();
       } else {
         console.error("Netlify CMS script did not load properly.");
