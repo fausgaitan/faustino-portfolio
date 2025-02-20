@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Content Manager</title>
-  <script src="https://unpkg.com/netlify-cms-app@2.10.48/dist/netlify-cms.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app/dist/netlify-cms-app.js"></script>
 </head>
 <body>
   <script>
-    if (typeof CMS !== "undefined") {
-      CMS.init();
-    } else {
-      console.error("Netlify CMS script did not load properly.");
-    }
+    window.onload = function () {
+      console.log("Netlify CMS script loading...");
+      if (typeof CMS !== "undefined") {
+        console.log("CMS found, initializing...");
+        CMS.init();
+      } else {
+        console.error("Netlify CMS script did not load properly.");
+      }
+    };
   </script>
 </body>
 </html>
