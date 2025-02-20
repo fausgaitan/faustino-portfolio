@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Content Manager</title>
-  <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app/dist/netlify-cms-app.js"></script>
+  <script src="https://unpkg.com/netlify-cms-app@2.10.48/dist/netlify-cms.js" defer></script>
 </head>
 <body>
   <script>
     console.log("Netlify CMS script loading...");
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("Window loaded.");
-      
+
+    window.addEventListener("load", () => {
+      console.log("Window fully loaded.");
+
       setTimeout(() => {
         console.log("Checking CMS object:", window.CMS);
 
@@ -20,7 +21,7 @@
         } else {
           console.error("Netlify CMS script did not load properly.");
         }
-      }, 2000); // Delay check by 2 seconds to allow script loading
+      }, 2000); // 2-second delay
     });
   </script>
 </body>
