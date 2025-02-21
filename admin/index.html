@@ -1,15 +1,25 @@
+cat > admin/index.html <<EOL
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Manager</title>
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 </head>
 <body>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            CMS.init();
+            console.log("Decap CMS script loading...");
+            
+            if (window.CMS) {
+                console.log("Decap CMS loaded successfully.");
+                CMS.init();
+            } else {
+                console.error("Decap CMS failed to load.");
+            }
         });
     </script>
 </body>
 </html>
+EOL
